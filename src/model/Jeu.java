@@ -58,7 +58,7 @@ public class Jeu  {
 		while(king_find==false){
 			for(int i=0;i<8;i++){
 				for(int j=0;j<8;j++){
-					if(getPieceType(i,j).equals("Roi"))
+					if(getTypePiece(i,j).equals("Roi"))
 					{
 						coord.x=i;
 						coord.y=j;
@@ -78,8 +78,10 @@ public class Jeu  {
 		return pieceCouleur.getCouleur();
 		}
 	
-	public String getPieceType (int x,int y) {
-		return type;}
+	public String getTypePiece (int x,int y) {
+		Pieces pieceType;
+		pieceType=findPiece(x,y);
+		return pieceType.getClass().getSimpleName();}
 	
 	public List<PieceIHM> getPieceIHM() {
 		PieceIHM newPieceIHM = null;
@@ -192,8 +194,12 @@ public class Jeu  {
 	
 	public static void main(String[] args) {
 		Couleur couleur_jeu_main;
+		
 		couleur_jeu_main=Couleur.BLANC;
+		Jeu jeuCourant= new Jeu(couleur_jeu_main);
 		System.out.println(new Jeu(couleur_jeu_main));
+		System.out.println(jeuCourant.getTypePiece(6, 6));
+		
 
 		couleur_jeu_main=Couleur.NOIR;
 		System.out.println(new Jeu(couleur_jeu_main));

@@ -61,7 +61,9 @@ public class Echiquier implements BoardGames {
 			if(getColorCurrentPlayer()==jeuCourant.getPieceColor(xInit,yInit)){
 				
 				//Etape 2 - Switch pour differencier le pion des autres pieces
-				String typePiece = jeuCourant.getPieceType(xInit,yInit);
+				String typePiece = jeuCourant.getTypePiece(xInit,yInit);
+				System.out.println("___________________");
+				System.out.println(typePiece);
 				switch(typePiece) {
 					case "Pion":
 						
@@ -440,13 +442,16 @@ public class Echiquier implements BoardGames {
 		return return_getPieceColor;
 	}
 	
-	public static void main (String [] arg){
-		Pieces maTour= new Tour (Couleur.NOIR,new Coord(0,0));
-		boolean MoveOk, MoveNotOk;
-		MoveOk=maTour.isMoveOk(5,0);
-		MoveNotOk=maTour.isMoveOk(2,3);
-		System.out.printf("Test sur un déplcement ok : isMoveOk retourne %b",MoveOk);
-		System.out.printf("\nTest sur un déplcement non ok : isMoveOk retourne %b",MoveNotOk);
+	public static void main (String [] arg){;
+		BoardGames monEchiquier= new Echiquier ();
+	 
+		System.out.printf(monEchiquier.toString());
+		((Echiquier) monEchiquier).switchJoueur ();
+		System.out.println(monEchiquier.getColorCurrentPlayer());
+		System.out.println(((Echiquier) monEchiquier).isMoveOk(6, 1, 6, 2));
+		System.out.println(((Echiquier) monEchiquier).getPiecesIHM());
 	}
 
 }
+
+

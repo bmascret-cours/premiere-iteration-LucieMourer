@@ -21,6 +21,8 @@ public interface BoardGames {
 	 */
 	public boolean move (int xInit, int yInit, int xFinal, int yFinal); 
 
+	public boolean isMoveOk (int xInit, int yInit, int xFinal, int yFinal); 
+
 	/**
 	 * @return true si c'est la fin du jeu
 	 */
