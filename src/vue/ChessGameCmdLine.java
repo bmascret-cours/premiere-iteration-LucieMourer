@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+
 import model.Coord;
 import model.Couleur;
 import model.PieceIHM;
@@ -77,7 +78,7 @@ public class ChessGameCmdLine implements Observer{
 
 		System.out.print("\n Déplacement de 3,6 vers 3,4 = ");
 		chessGameControler.move(new Coord(3,6), new Coord(3, 4));	// true
-
+/*
 		// dans ce cas, update non appelé et pas d'affichage 
 		// controleur empêche le move car pas le bon joueur
 		System.out.print("\n Déplacement de 3,4 vers 3,6 = ");		
@@ -90,7 +91,8 @@ public class ChessGameCmdLine implements Observer{
 		chessGameControler.move(new Coord(3, 4), new Coord(3, 4));	// false
 
 		System.out.print("\n Déplacement de 3,4 vers 4,3 = ");
-		chessGameControler.move(new Coord(3, 4), new Coord(4, 3));	// true		
+		chessGameControler.move(new Coord(3, 4), new Coord(4, 3));	// true	
+		*/	
 
 	}
 

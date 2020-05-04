@@ -108,4 +108,13 @@ public class ChessGame extends Observable implements BoardGames{
 		super.addObserver(o);
 		this.notifyObservers(echiquier.getPiecesIHM()); 
 	}
+
+
+	@Override
+	public boolean isMoveOk(int xInit, int yInit, int xFinal, int yFinal) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+
 }
